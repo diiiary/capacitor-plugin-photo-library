@@ -3,10 +3,37 @@ declare module "@capacitor/core" {
         PhotoLibrary: PhotoLibraryPlugin;
     }
 }
+export interface GetPhotosParams {
+    offset: number;
+    limit: number;
+    width: number;
+    height: number;
+    quality: number;
+    mode: string;
+}
+export interface GetPhotosResponse {
+    total: number;
+    images: Photo[];
+}
+export interface GetPhotoParams {
+    id: string;
+    width: number;
+    height: number;
+    quality: number;
+    mode: string;
+}
+export interface Photo {
+    id: string;
+    createTime: number;
+    location: {
+        latitude: number;
+        longitude: number;
+    };
+    base64: string;
+}
 export interface PhotoLibraryPlugin {
-    echo(options: {
-        value: string;
-    }): Promise<{
-        value: string;
-    }>;
+    getPhotos(options: GetPhotosParams): Promise<GetPhotosResponse>;
+    getPhoto(options: {
+        id: string;
+    }): Promise<Photo>;
 }

@@ -6,23 +6,27 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { WebPlugin } from '@capacitor/core';
+import { WebPlugin } from "@capacitor/core";
 export class PhotoLibraryWeb extends WebPlugin {
     constructor() {
         super({
-            name: 'PhotoLibrary',
-            platforms: ['web']
+            name: "PhotoLibrary",
+            platforms: ["web"]
         });
     }
-    echo(options) {
+    getPhotos() {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('ECHO', options);
-            return options;
+            throw "No web implement";
+        });
+    }
+    getPhoto() {
+        return __awaiter(this, void 0, void 0, function* () {
+            throw "No web implement";
         });
     }
 }
 const PhotoLibrary = new PhotoLibraryWeb();
 export { PhotoLibrary };
-import { registerWebPlugin } from '@capacitor/core';
+import { registerWebPlugin } from "@capacitor/core";
 registerWebPlugin(PhotoLibrary);
 //# sourceMappingURL=web.js.map

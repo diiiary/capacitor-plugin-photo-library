@@ -1,17 +1,19 @@
-import { WebPlugin } from '@capacitor/core';
-import { PhotoLibraryPlugin } from './definitions';
+import { WebPlugin } from "@capacitor/core";
+import { PhotoLibraryPlugin, Photo, GetPhotosResponse } from "./definitions";
 
 export class PhotoLibraryWeb extends WebPlugin implements PhotoLibraryPlugin {
   constructor() {
     super({
-      name: 'PhotoLibrary',
-      platforms: ['web']
+      name: "PhotoLibrary",
+      platforms: ["web"]
     });
   }
 
-  async echo(options: { value: string }): Promise<{value: string}> {
-    console.log('ECHO', options);
-    return options;
+  async getPhotos(): Promise<GetPhotosResponse> {
+    throw "No web implement";
+  }
+  async getPhoto(): Promise<Photo> {
+    throw "No web implement";
   }
 }
 
@@ -19,5 +21,5 @@ const PhotoLibrary = new PhotoLibraryWeb();
 
 export { PhotoLibrary };
 
-import { registerWebPlugin } from '@capacitor/core';
+import { registerWebPlugin } from "@capacitor/core";
 registerWebPlugin(PhotoLibrary);
