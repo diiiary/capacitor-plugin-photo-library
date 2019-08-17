@@ -4,8 +4,8 @@ This plugin mainly used for getting all the images from system album and display
 
 ## Process:
 
-- [x][ios] getPhotos, getPhoto
-- [Android] need your help! please submit your changes, I will merge and publish
+- ✅[ios] getPhotos, getPhoto
+- ☑️[Android] need your help! please submit your changes, I will merge and publish
 
 ## Install
 
