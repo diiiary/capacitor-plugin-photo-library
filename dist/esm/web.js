@@ -19,11 +19,6 @@ export class PhotoLibraryWeb extends WebPlugin {
             throw "No web implement";
         });
     }
-    getPhoto() {
-        return __awaiter(this, void 0, void 0, function* () {
-            throw "No web implement";
-        });
-    }
 }
 const PhotoLibrary = new PhotoLibraryWeb();
 export { PhotoLibrary };

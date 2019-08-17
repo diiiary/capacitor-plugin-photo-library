@@ -15,13 +15,6 @@ export interface GetPhotosResponse {
     total: number;
     images: Photo[];
 }
-export interface GetPhotoParams {
-    id: string;
-    width: number;
-    height: number;
-    quality: number;
-    mode: string;
-}
 export interface Photo {
     id: string;
     createTime: number;
@@ -33,7 +26,4 @@ export interface Photo {
 }
 export interface PhotoLibraryPlugin {
     getPhotos(options: GetPhotosParams): Promise<GetPhotosResponse>;
-    getPhoto(options: {
-        id: string;
-    }): Promise<Photo>;
 }

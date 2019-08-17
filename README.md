@@ -4,7 +4,7 @@ This plugin mainly used for getting all the images from system album and display
 
 ## Process:
 
-- ✅[ios] getPhotos, getPhoto
+- ✅[ios] getPhotos
 - ☑️[Android] need your help! please submit your changes, I will merge and publish
 
 ## Install
@@ -18,37 +18,20 @@ npx cap sync
 
 ### getPhotos
 
-Read the photo list (like a thumbnail list)
+Read the photos by ids or limit/offset
 
 ```javascript
 const { total, images } = await Capacitor.Plugins.PhotoLibrary.getPhotos({
-  offset: 0,
-  limit: 10,
-  width: 200,
-  height: 200,
-  quality: 100,
-  mode: "fast"
+  ids: [], // photo ids
+  offset: 0, // fetch offset (will be ignored when ids set)
+  limit: 10, // fetch limit (will be ignored when ids set)
+  width: 200, // image width
+  height: 200, // image height
+  quality: 100, // image quality
+  mode: "fast" // mode: fast | exact
 });
 images.map(image => {
-  const { id, createTime, base64, location } = image;
-  // ...
-});
-```
-
-### getPhoto
-
-Read the photo content
-
-```javascript
-const { total, images } = await Capacitor.Plugins.PhotoLibrary.getPhotos({
-  id: "",
-  width: 200,
-  height: 200,
-  quality: 100,
-  mode: "fast"
-});
-images.map(image => {
-  const { id, createTime, base64, location } = image;
+  const { id, createTime, dataUrl, location } = image;
   // ...
 });
 ```

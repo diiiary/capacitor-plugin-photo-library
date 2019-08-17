@@ -1,5 +1,5 @@
 import { WebPlugin } from "@capacitor/core";
-import { PhotoLibraryPlugin, Photo, GetPhotosResponse } from "./definitions";
+import { PhotoLibraryPlugin, GetPhotosResponse } from "./definitions";
 
 export class PhotoLibraryWeb extends WebPlugin implements PhotoLibraryPlugin {
   constructor() {
@@ -10,9 +10,6 @@ export class PhotoLibraryWeb extends WebPlugin implements PhotoLibraryPlugin {
   }
 
   async getPhotos(): Promise<GetPhotosResponse> {
-    throw "No web implement";
-  }
-  async getPhoto(): Promise<Photo> {
     throw "No web implement";
   }
 }
