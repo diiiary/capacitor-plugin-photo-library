@@ -1,6 +1,6 @@
 {
   "name": "capacitor-plugin-photo-library",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Get photos from device photos",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",

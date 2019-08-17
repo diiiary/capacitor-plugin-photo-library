@@ -13,7 +13,7 @@ public class PhotoLibrary: CAPPlugin {
         let jpegData = image.jpegData(compressionQuality: quality)
         return [
             "id": imageAsset.localIdentifier,
-            "createTime":  Int(imageAsset.creationDate?.timeIntervalSinceNow ?? 0) * 1000,
+            "createTime":  Int(imageAsset.creationDate!.timeIntervalSince1970 * 1000),
             "location": [
                 "latitude": imageAsset.location?.coordinate.latitude,
                 "longitude": imageAsset.location?.coordinate.longitude
